@@ -39,11 +39,11 @@ Once done, in git bash type vagrant --version. This should return "Vagrant 2.2.7
 ### Windows Users only
 
 > 1. If `C:\ProgramFiles\Oracle\VirtualBox\drivers\vboxdrv` does exist, navigate to it. If it does not exist, do not worry, and proceed straight to step 3.
-> 2. Right click on the ***VBoxDrv.inf*** Setup Information file and and select Install
+> 2. Right click on the ***VBoxDrv.inf*** Setup Information file and and select Install.
 > 3. Open up Windows PowerShell ***as an administrator***, and type in `sc start vboxdrv` and click enter. Exit powershell.
 > 4. Go to ***Control Panel***. From there go to ***Network and Internet***. Click ***Network and Sharing Centre***, then click ***Change Adapter Settings*** on the left-hand side.
-> 5. Right click on ***VirtualBox Host-Only Network*** and choose **Properties**
-> 6. Click on ***Install.*** Then click on ***Service***
+> 5. Right click on ***VirtualBox Host-Only Network*** and choose **Properties**.
+> 6. Click on ***Install.*** Then click on ***Service***.
 > 7. On the left-hand side, choose ***Oracle Corporation***. Click ***VirtualBox NDIS6 Bridged Networking driver***.
 
 # Step 4 - Creating our virtual environment 

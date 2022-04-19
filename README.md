@@ -50,4 +50,4 @@ DevOps reduces the cost of computation by ensuring the company only pays for res
 They can do this by leveraging serverless infrastructure like AWS Lambda or GCP Functions.
 
 Moreover, automation cuts down on the costs associated with the volume of manual work as the DevOps team can
-use tools and work seamlessly with one another in the same team to build, test and deploy faster than previously possible. 
+use automated tools and work seamlessly with one another to build, test and deploy faster than previously possible. 
