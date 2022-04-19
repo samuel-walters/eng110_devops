@@ -59,7 +59,7 @@ Vagrant.configure("2") do |config|
 
 end
 ```
-> 3. In gitbash, ***in the same directory you have created the vagrantfile inside***, type `vagrant run` and hit enter.
+> 3. In gitbash, ***in the same directory you have created the vagrantfile inside***, type `vagrant up` and hit enter.
 > 4. This command may take a while to run. It depends on your computer. You should receive the following output:
 
 ![](https://github.com/khanmaster/vb_vagrant_installtion/blob/master/images/vagrantup_result.png)
