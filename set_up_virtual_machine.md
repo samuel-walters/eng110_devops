@@ -3,6 +3,7 @@
 ## Windows Users
 
 Paste the following link in your browser:
+
 https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.6.6-1/rubyinstaller-devkit-2.6.6-1-x64.exe
 
 ## Mac Users
@@ -18,6 +19,7 @@ https://www.ruby-lang.org/en/downloads/
 Check your version in gitbash by doing ruby --version. You may need to close and reopen gitbash in order for this command to work.
 
 Ensure the version is ***2.6.6p146*** as shown below:
+
 ![](https://github.com/khanmaster/vb_vagrant_installtion/raw/master/images/ruby_version.png)
 
 # Step 2 - Install Vagrant
@@ -59,7 +61,11 @@ end
 ```
 > 3. In gitbash, ***in the same directory you have created the vagrantfile inside***, type `vagrant run` and hit enter.
 > 4. This command may take a while to run. It depends on your computer. You should receive the following output:
+
 ![](https://github.com/khanmaster/vb_vagrant_installtion/blob/master/images/vagrantup_result.png)
+
 > 5. After the command has finished, `type vagrant status` and hit enter. If you see the following output, it means you have done well so far:
+
 ![](https://github.com/khanmaster/vb_vagrant_installtion/blob/master/images/vagrant_status.png)
+
 > 6. Type vagrant ssh to connect to your virtual machine. Once inside, try typing `sudo apt-get update` to connect to the internet.
