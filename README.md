@@ -9,7 +9,7 @@ and continuous deployment.
 
 Traditionally, there were two separate teams which handled software development and
 IT operations. However, this led to silos where the two teams started blaming one another
-whenever problems arise. DevOps bridges this gap between the teams, eliminating blame
+whenever problems arose. DevOps bridges this gap between the teams, eliminating blame
 culture as everyone will be united under one single team. The lack of friction ensures 
 everyone can really focus upon what is important: releasing and maintaining high-quality
 software at a competitive pace.
