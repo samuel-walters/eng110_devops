@@ -1,7 +1,7 @@
 # What is DevOps
 
 DevOps is a combination of cultural philosophies, practices and tools that
-allow a company to shorten its systems development lifecycle (SDL) while still
+allow a company to shorten its software development lifecycle (SDL) while still
 providing high-quality software through the processes of continuous integration
 and continuous deployment.
 
