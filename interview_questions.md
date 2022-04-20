@@ -1,8 +1,8 @@
 # What is virtualisation (Vagrant - VirtualBox)?
 
-Virtualisation creates a simulated or virtual computing environment, as opposed to a physical environment. Tools like Vagrant allow developers to automate the process of creating virtual machines so that what works on one person's machine will work the same way on another person's machine. 
+Virtualisation is the act of creating a virtual or simulated (as opposed to an actual) version of something such as a virtual machine that acts like a real computer with an operating system. Software executed on these virtual machines is separated from the underlying hardware resources. For example, a computer that is running Microsoft Windows may host a virtual machine that looks like a computer with the Ubuntu Linux operating system.
 
-Furthermore, Vagrant enables automation since it uses VirtualBox (software that creates a VM) along with any scripts the developer creates to automatically set up and configure an environment that fits the needs of the team. This saves a great deal of time since manually setting up and configuring a virtual environment is not a trivial and short process.
+There are tools which can automate the process of setting up virtual machines (VMs). Vagrant, for example, enables automation since it uses VirtualBox (software that creates a VM) along with any scripts the developer creates to automatically set up and configure an environment. This saves a great deal of time since manually setting up and configuring a VM is not a trivial or short process.
 
 # What is Dev Env?
 
