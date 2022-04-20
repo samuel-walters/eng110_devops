@@ -1,3 +1,5 @@
+# Setting up and connecting to a repository on GitHub using Git.
+
 > 1. Create a new repository on GitHub.com.
 > 2. Open GitBash.
 > 3. Change the current working directory to your local project.
