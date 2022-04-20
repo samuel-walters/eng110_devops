@@ -5,7 +5,7 @@
 > 3. Fill the file as so - pay attention to the comments:
 
     #!/bin/bash
-    # You have to put the above command to show it is a bash script
+    # The above line communicates with the OS that this is going to be a bash script
     # Run updates
     sudo apt-get update -y
     # Run upgrades
