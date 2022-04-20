@@ -51,3 +51,25 @@ They can do this by leveraging serverless infrastructure like AWS Lambda or GCP 
 
 Moreover, automation cuts down on the costs associated with the volume of manual work as the DevOps team can
 use automated tools and work seamlessly with one another to build, test and deploy faster than previously possible. 
+
+### Vagrant commands
+
+- Creates and configures guest machines according to your vagrantfile - `vagrant up`
+- Stops the running machine Vagrant is currently managing and destroys all resources that were created during the machine creation process - `vagrant destory`
+- Shuts down the running machine Vagrant is managing - `vagrant halt`
+- If the vagrant file gets changed, use `vagrant reload`. If this does not work,
+use `vagrant destroy` and then `vagrant up`.
+- You can type `vagrant` in git bash to get all the commands.
+
+### Linux commands - Ubuntu distro
+- update (connect to the internet) - `sudo apt-get update`
+- upgrade (-y means it will complete automatically without stopping and asking whether you want to continue) - `sudo apt-get upgrade -y`
+- Who am I (which machine am I using) - `uname`. More information: `uname -a`.
+- Where am I? `pwd` - shows your present working directory 
+
+
+
+
+
+
+
