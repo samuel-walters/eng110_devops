@@ -66,10 +66,23 @@ use `vagrant destroy` and then `vagrant up`.
 - upgrade (-y means it will complete automatically without stopping and asking whether you want to continue) - `sudo apt-get upgrade -y`
 - Who am I (which machine am I using) - `uname`. More information: `uname -a`.
 - Where am I? `pwd` - shows your present working directory 
+- How to check files/folders in existing location `ls` or `ls -a` (a means all - shows all hidden files/folders as well - hidden files/folders have a dot before their name)
+- How to create dir `mkdir dir_name`
+- navigate to any folder - change directory `cd folder_name`
+- How to change back to the former location. One step back --> `cd..`
+Home location --> `cd` enter
+- How to create a film `touch file_name` or `nano file_name` (nano is an editor - it will create the file if it does not exist)
+- To see the content of the file on terminal `cat file_name`
+- How to copy file `cp location_file_name destination_path`
+- To copy and paste a file somewhere, it is `mv location_file_name destination_path`
+- For the above two commands, if you are in the directory where the file/folder you want to move is, and if the destination path is also found in that directory, you do not need to provide the absolute location (e.g. something like /home/test/eng110 etc.) Instead, you can just provide the file/folder name.
+- How to delete folders `rm -rf folder_name` (-rf forces the deletion)
+- How to check running process in linux `top` or `ps aux`
+- How to delte/remove/kill any process `kill pid`
 
-
-
-
-
-
-
+### Permissions
+- how to check permissions `ll`
+- how to switch to `root user` ---> `sudo su`
+root user is dangerous. there will be no prompts/noifications, you
+could destroy data suddenly. do exit to go back to user
+- how to change permissions `chmod instruction file_name`
