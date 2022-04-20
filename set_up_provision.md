@@ -4,17 +4,17 @@
 > 2. Edit the file using `nano provision.sh`.
 > 3. The first line should be `#!/bin/bash`. This line lets the OS know
 that this file is going to be a bash script.
-> 4. Underneath the first line, add the following:
+> 4. Underneath the first line, add these commands in the order shown:
 
-    `sudo apt-get update -y` - Run updates
+* `sudo apt-get update -y` - Run updates
 
-    `sudo apt-get upgrade -y` - Run upgrades
+* `sudo apt-get upgrade -y` - Run upgrades
 
-    `sudo apt-get install nginx -y` - install nginx
+* `sudo apt-get install nginx -y` - install nginx
 
-    `sudo systemctl start nginx` - Start nginx
+* `sudo systemctl start nginx` - Start nginx
 
-    `sudo systemctl enable nginx` - Enable nginx
+* `sudo systemctl enable nginx` - Enable nginx
 
 > 5. - Press ctrl + x, hit y, and press enter.
 
