@@ -81,8 +81,27 @@ Home location --> `cd` enter
 - How to delte/remove/kill any process `kill pid`
 
 ### Permissions
+
 - how to check permissions `ll`
 - how to switch to `root user` ---> `sudo su`
 root user is dangerous. there will be no prompts/noifications, you
 could destroy data suddenly. do exit to go back to user
 - how to change permissions `chmod instruction file_name`
+- processes: timeout 30s ping www.google.com
+- How to install a product `install webserver called nginx`
+- `sudo apt-get install package_name`
+How to check the `status` - `systemctl status nginx`
+- put in the line `config.vm.network "private_network", ip: "192.168.10.100"` in your vagrant file
+- `vagrant reload`
+- put in the ip in your browser
+
+### bash script - set of commands/instructions
+
+- file name must end in .sh
+- put `#!/bin/bash` at the start otherwise it won't work (it won't
+even know it's a bash script)
+- put in linux commands
+- press ctrl + x, hit y, and press enter
+- type in `sudo chmod +x filename.sh` to make it executable.
+- to run the script, type `sudo ./provision.sh` (if you are in
+the same directory as the script)
