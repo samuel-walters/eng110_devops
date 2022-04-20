@@ -5,7 +5,7 @@
 - Shuts down the running machine Vagrant is managing - `vagrant halt`.
 - If the vagrant file gets changed, use `vagrant reload`. If this does not work,
 use `vagrant destroy` and then `vagrant up`.
-- You can type `vagrant` in git bash to get all the commands.
+- You can type `vagrant` in GitBash to get all the commands.
 
 # Linux commands - Ubuntu distro
 - Update (connect to the internet) - `sudo apt-get update`.

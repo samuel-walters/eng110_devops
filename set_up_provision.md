@@ -1,6 +1,8 @@
+# Creating an automated bash script for Vagrant
+
 > 1. Create the bash script using the command `touch provision.sh`.
 > 2. Edit the file using `nano provision.sh`.
-> 3. Fill the file as so:
+> 3. Fill the file as so - pay attention to the comments:
 
     #!/bin/bash
     # You have to put the above command to show it is a bash script
@@ -24,6 +26,7 @@
         # create a private network with provided ip address
         config.vm.network "private_network", ip: "192.168.10.100"
         
+        # trigger --> after typing vagrant up, these lines will run
         config.trigger.after :up do |trigger|
             config.vm.provision "shell", path: "provision.sh"
         end
