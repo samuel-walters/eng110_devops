@@ -44,6 +44,28 @@ could destroy data suddenly. Type exit to go back to user.
 - `vagrant reload`.
 - Put in the ip in your browser.
 
+### Env Variables 
+- Persistent: don't need to set something every time 
+- How to check existing `Env var`, `printenv` OR `env`.
+- How to print specific `env var` - `printenv variable_here` 
+gives you the value of the variable (the key).
+- How to create an env var - the key word is `export`.
+- `export key=value`.
+- As soon as you leave the terminal, the environment is dead.
+- You have to make the environment variable persistent in 
+order for it to survive.
+- How to make an `env var` persistent on linux ubuntu:
+`nano .bashrc`, go to the bottom of the file and type:
+`export variable_name='value'`.
+
+##### Purpose of Env Var
+
+- DRY: don't repeat yourself. A variable only has to be
+declared once, but it can be used many different times
+in many different places.
+- Automation: once an Env Var is created, it will not
+need to be recreated every time you launch the terminal.
+
 # Bash script
 
 - File name must end in .sh.
@@ -54,3 +76,14 @@ even know it's a bash script).
 - Type in `sudo chmod +x filename.sh` to make it executable.
 - To run the script, type `sudo ./provision.sh` (if you are in
 the same directory as the script).
+
+# Ruby testing
+
+- Navigate to the test directory, and install Ruby by typing 
+`gem install bundler`. 
+- Navigate to the correct directory, and type `rake spec` and
+wait for the results of the tests (written in Ruby) to appear
+- Run the ruby tests to ensure the dev env has everything
+needed to deploy the app
+- This is known as integration testing - are we able to integrate
+the app with the environment that already existed - yes/no?
