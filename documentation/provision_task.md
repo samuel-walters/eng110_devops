@@ -13,7 +13,7 @@ of whether you want to continue will be met with a yes.
 
 * `sudo apt-get upgrade -y` - Run upgrades
 
-* `sudo apt-get install nginx -y` - install nginx
+* `sudo apt-get install nginx -y` - Install nginx
 
 * `sudo systemctl start nginx` - Start nginx
 
