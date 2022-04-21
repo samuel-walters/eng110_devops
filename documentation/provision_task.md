@@ -1,5 +1,7 @@
 # Provision Task
 
+## Bash script
+
 > 1. Create a bash script using the command `touch provision.sh`.
 > 2. Edit the file using `nano provision.sh`.
 > 3. The first line should be `#!/bin/bash`. This line lets the OS know
@@ -32,7 +34,9 @@ and we change directory because we want to install our dependencies here).
 
 > 6. Type in `sudo chmod +x provision.sh` to make the file executable.
 
-> 7. In your Vagrantfile, make sure to include these lines under `Vagrant.configure("2") do |config|`:
+## Vagrantfile
+
+> 1. In your Vagrantfile, make sure to include these lines under `Vagrant.configure("2") do |config|`:
 
 * `config.vm.box = "ubuntu/xenial64"` - Creates a virtual machine.
 
@@ -56,16 +60,18 @@ below lines will run.
             end
         end
 
-> 8. Type `vagrant up` in console and wait for it to finish.
+> 2. Type `vagrant up` in console and wait for it to finish.
 
-> 9. Type `vagrant ssh` in console.
+> 3. Type `vagrant ssh` in console.
 
-> 10. Inside your VM, navigate using the `cd` command to where you want to install and start `npm`.
+> 4. Inside your VM, navigate using the `cd` command to where you want to install and start `npm`.
 
-> 11. Once in the directory, install `npm` using the command `install npm`. Start it by typing in the command `start npm`.
+> 5. Once in the directory, install `npm` using the command `install npm`. Start it by typing in the command `start npm`.
 
-> 12. In your localhost, navigate to where the tests are written using the `cd` command.
+## Ruby Tests and Checking the Webpage
 
-> 13. Run the tests using `rake spec`. You must have Ruby installed for this to work. If you do not have Ruby installed, type in `gem install bundler`.
+> 1. In your localhost, navigate to where the tests are written using the `cd` command.
 
-> 14. Access the Fibonacci page by typing in `192.168.10.100:3000/fibonacci/6` in your browser.
+> 2. Run the tests using `rake spec`. You must have Ruby installed for this to work. If you do not have Ruby installed, type in `gem install bundler`.
+
+> 3. Access the Fibonacci page by typing in `192.168.10.100:3000/fibonacci/6` in your browser.
