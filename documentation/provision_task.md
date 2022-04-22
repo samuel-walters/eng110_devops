@@ -19,16 +19,39 @@ of whether you want to continue will be met with a yes.
 
 * `sudo systemctl enable nginx` - Enable nginx
 
-* `cd app` - Change directory to the app folder
+* The below commands give us permission to edit a file called default:
 
-* `cd app` - Same as above (this new app folder is inside the other app folder -
-and we change directory because we want to install our dependencies here).
+        sudo chown vagrant: /etc/nginx/sites-available/default
+        sudo chown vagrant: /etc/nginx/sites-available/.default.swp
+        sudo chmod u+w /etc/nginx/sites-available/.default.swp
+        sudo chmod u+w /etc/nginx/sites-available/default
+        sudo chmod u+w /etc/nginx/sites-available/.
+        sudo chmod u+w /etc/nginx/sites-available/..
+        sudo chown vagrant: /etc/nginx/sites-available/..
+        sudo chown vagrant: /etc/nginx/sites-available/.
 
-* `sudo apt-get install python-software-properties -y` - Installs python dependencies
+* Deletes lines 44-46 using the `sed` command: 
 
-* `curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -` - Gets version 6
+        sed '44,46d' /etc/nginx/sites-available/default -i
 
-* `sudo apt-get install -y nodejs` - Installs nodejs
+* The below commands insert lines using the `awk` command into the file at a specific location:
+
+        awk 'NR==44{print "             proxy_pass http://localhost:3000;"}7' /etc/nginx/sites-available/default > change && mv change /etc/nginx/sites-available/default
+        awk 'NR==45{print "             proxy_http_version 1.1;"}7' /etc/nginx/sites-available/default > change && mv change /etc/nginx/sites-available/default        
+        awk 'NR==46{print "             proxy_set_header Upgrade $http_upgrade;"}7' /etc/nginx/sites-available/default > change && mv change /etc/nginx/sites-available/default
+        awk 'NR==47{print "             proxy_set_header Connection 'upgrade';"}7' /etc/nginx/sites-available/default > change && mv change /etc/nginx/sites-available/default
+        awk 'NR==48{print "             proxy_set_header Host $host;"}7' /etc/nginx/sites-available/default > change && mv change /etc/nginx/sites-available/default   
+        awk 'NR==49{print "             proxy_cache_bypass $http_upgrade;"}7' /etc/nginx/sites-available/default > change && mv change /etc/nginx/sites-available/default
+
+* Restarts nginx as we have changed the default file - `sudo systemctl restart nginx`.
+
+* `cd app/app` - Change directory to the app folder. This is where we will install our dependencies.
+
+* `sudo apt-get install python-software-properties -y` - Installs python dependencies.
+
+* Gets version 6 - `curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -`.
+
+* `sudo apt-get install -y nodejs` - Installs nodejs.
 
 > 5. - Press ctrl + x, hit y, and press enter.
 
@@ -66,7 +89,7 @@ below lines will run.
 
 > 4. Inside your VM, navigate using the `cd` command to where you want to install and start `npm`.
 
-> 5. Once in the directory, install `npm` using the command `install npm`. Start it by typing in the command `start npm`.
+> 5. Once in the directory, install `npm` using the command `npm install`. Start it by typing in the command `npm start`.
 
 ## Ruby Tests and Checking the Webpage
 
@@ -74,4 +97,4 @@ below lines will run.
 
 > 2. Run the tests using `rake spec`. You must have Ruby installed for this to work. If you do not have Ruby installed, type in `gem install bundler`.
 
-> 3. Access the Fibonacci page by typing in `192.168.10.100:3000/fibonacci/6` in your browser.
+> 3. Access the Fibonacci page by typing in `192.168.10.100/fibonacci/6` in your browser. You will not need to put in the port because if you followed the steps we used nginx as our reverse proxy.
