@@ -14,19 +14,11 @@ sudo systemctl start nginx
 sudo systemctl enable nginx
 
 # Allows us to edit the file at /etc/nginx/sites-available/default
-
-sudo chown vagrant: /etc/nginx/sites-available/default
-sudo chown vagrant: /etc/nginx/sites-available/.default.swp
-sudo chmod u+w /etc/nginx/sites-available/.default.swp
-sudo chmod u+w /etc/nginx/sites-available/default
-sudo chmod u+w /etc/nginx/sites-available/.
-sudo chmod u+w /etc/nginx/sites-available/..
-sudo chown vagrant: /etc/nginx/sites-available/..
 sudo chown vagrant: /etc/nginx/sites-available/.
 
-# deletes lines 44-46
+# Deletes lines 44-46 in the default file we now have permission to
 sed '44,46d' /etc/nginx/sites-available/default -i
-# inserts all the necessary lines to set up a reverse proxy for nginx
+# inserts all the necessary lines in the default file to set up a reverse proxy for nginx
 awk 'NR==44{print "             proxy_pass http://localhost:3000;"}7' /etc/nginx/sites-available/default > change && mv change /etc/nginx/sites-available/default
 awk 'NR==45{print "             proxy_http_version 1.1;"}7' /etc/nginx/sites-available/default > change && mv change /etc/nginx/sites-available/default        
 awk 'NR==46{print "             proxy_set_header Upgrade $http_upgrade;"}7' /etc/nginx/sites-available/default > change && mv change /etc/nginx/sites-available/default
@@ -34,8 +26,11 @@ awk 'NR==47{print "             proxy_set_header Connection 'upgrade';"}7' /etc/
 awk 'NR==48{print "             proxy_set_header Host $host;"}7' /etc/nginx/sites-available/default > change && mv change /etc/nginx/sites-available/default   
 awk 'NR==49{print "             proxy_cache_bypass $http_upgrade;"}7' /etc/nginx/sites-available/default > change && mv change /etc/nginx/sites-available/default
 
-# restarts nginx as we have changed the default file
+# Restores the permissions we changed to edit the default file
+sudo chown root: /etc/nginx/sites-available/.
+sudo chown root: /etc/nginx/sites-available/default
 
+# restarts nginx as we have changed the default file
 sudo systemctl restart nginx
 
 # Changes the directory to where we want to install the dependencies 

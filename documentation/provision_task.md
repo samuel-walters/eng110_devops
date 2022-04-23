@@ -11,30 +11,19 @@ that this file is going to be a bash script.
 * `sudo apt-get update -y` - Run updates. the `-y` means any notifications
 of whether you want to continue will be met with a yes.
 
-* `sudo apt-get upgrade -y` - Run upgrades
+* `sudo apt-get upgrade -y` - Run upgrades.
 
-* `sudo apt-get install nginx -y` - Install nginx
+* `sudo apt-get install nginx -y` - Install nginx.
 
-* `sudo systemctl start nginx` - Start nginx
+* `sudo systemctl start nginx` - Start nginx.
 
-* `sudo systemctl enable nginx` - Enable nginx
+* `sudo systemctl enable nginx` - Enable nginx.
 
-* The below commands give us permission to edit a file called default:
+* `sudo chown vagrant: /etc/nginx/sites-available/.` - Allows us to edit a nginx file so we can set up a reverse proxy.
 
-        sudo chown vagrant: /etc/nginx/sites-available/default
-        sudo chown vagrant: /etc/nginx/sites-available/.default.swp
-        sudo chmod u+w /etc/nginx/sites-available/.default.swp
-        sudo chmod u+w /etc/nginx/sites-available/default
-        sudo chmod u+w /etc/nginx/sites-available/.
-        sudo chmod u+w /etc/nginx/sites-available/..
-        sudo chown vagrant: /etc/nginx/sites-available/..
-        sudo chown vagrant: /etc/nginx/sites-available/.
+* `sed '44,46d' /etc/nginx/sites-available/default -i` - Deletes lines 44-46 of this file we now have permission to edit. 
 
-* Deletes lines 44-46 using the `sed` command: 
-
-        sed '44,46d' /etc/nginx/sites-available/default -i
-
-* The below commands insert lines using the `awk` command into the file at a specific location:
+* The below commands insert lines into the same file using the `awk` command:
 
         awk 'NR==44{print "             proxy_pass http://localhost:3000;"}7' /etc/nginx/sites-available/default > change && mv change /etc/nginx/sites-available/default
         awk 'NR==45{print "             proxy_http_version 1.1;"}7' /etc/nginx/sites-available/default > change && mv change /etc/nginx/sites-available/default        
@@ -42,6 +31,11 @@ of whether you want to continue will be met with a yes.
         awk 'NR==47{print "             proxy_set_header Connection 'upgrade';"}7' /etc/nginx/sites-available/default > change && mv change /etc/nginx/sites-available/default
         awk 'NR==48{print "             proxy_set_header Host $host;"}7' /etc/nginx/sites-available/default > change && mv change /etc/nginx/sites-available/default   
         awk 'NR==49{print "             proxy_cache_bypass $http_upgrade;"}7' /etc/nginx/sites-available/default > change && mv change /etc/nginx/sites-available/default
+
+* The below commands restore the permissions we changed to edit the default file:
+
+        sudo chown root: /etc/nginx/sites-available/.
+        sudo chown root: /etc/nginx/sites-available/default
 
 * Restarts nginx as we have changed the default file - `sudo systemctl restart nginx`.
 
@@ -67,8 +61,7 @@ of whether you want to continue will be met with a yes.
 
 * `config.vm.synced_folder ".", "/home/vagrant/app"` - Transfers data from localhost to VM.
 
-* `config.trigger.after :up do |trigger|` - When vagrant up gets typed in the terminal, the
-below lines will run.
+* `config.trigger.after :up do |trigger|` - When vagrant up gets typed in the terminal, the below lines will run.
 
 * `config.vm.provision "shell", path: "provision.sh"` - Runs the provision.sh script inside the VM.
 
@@ -97,4 +90,4 @@ below lines will run.
 
 > 2. Run the tests using `rake spec`. You must have Ruby installed for this to work. If you do not have Ruby installed, type in `gem install bundler`.
 
-> 3. Access the Fibonacci page by typing in `192.168.10.100/fibonacci/6` in your browser. You will not need to put in the port because if you followed the steps we used nginx as our reverse proxy.
+> 3. Access the Fibonacci page by typing in `192.168.10.100/fibonacci/6` in your browser. You will not need to put in the port because if you followed the steps we used nginx to set up a reverse proxy.
