@@ -51,3 +51,7 @@ They can do this by leveraging serverless infrastructure like AWS Lambda or GCP 
 
 Moreover, automation cuts down on the costs associated with the volume of manual work as the DevOps team can
 use automated tools and work seamlessly with one another to build, test and deploy faster than previously possible.
+
+# Links to Repository Documentation
+
+- [Linux Commands](documentation/other_file.md)
